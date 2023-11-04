@@ -252,7 +252,7 @@ plt.ylabel("Actual Number of Pomodoros")
 plt.legend()
 plt.show()
 
-                                                #### LINEAR REGRESSION ON DATA WITH A 80/20 SPLIT ####
+                               #### LINEAR REGRESSION ON DATA AFTER SPLITTING WITH A 80/20 SPLIT ####
 import numpy as np
 from sklearn.preprocessing import PolynomialFeatures
 from sklearn.linear_model import LinearRegression
@@ -342,7 +342,7 @@ avg_mae = (mae_red + mae_blue) / 2
 print("\nAverage RMSE:", avg_rmse)
 print("Average MAE:", avg_mae)
 
-                                                  #### LOOCV ON LINEAR REGRESSION AFTER SPLITTING ####
+                                       #### LOOCV ON LINEAR REGRESSION AFTER SPLITTING ####
 # Your data
 DataX = np.array([x[0] for x in Total]).reshape(-1, 1)
 DataY = np.array([x[1] for x in Total])
@@ -419,7 +419,7 @@ avg_mae = (red_mae_loocv + blue_mae_loocv) / 2
 print("\nAverage RMSE:", avg_rmse)
 print("Average MAE:", avg_mae)
 
-                                                       #### REGRESSION TREES AFTER THE SPLIT ####
+                                        #### REGRESSION TREES AFTER THE SPLIT ####
 
 import numpy as np
 import matplotlib.pyplot as plt
