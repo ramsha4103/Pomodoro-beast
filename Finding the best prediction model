@@ -1,4 +1,4 @@
-                                                ####Lists of lists created manually from my notion ####
+                                          #### DATA IMPORTED AS A LIST OF LISTS ####
 Total =([[3, 5],
        [5, 4],
        [1, 2],
@@ -30,7 +30,7 @@ plt.ylabel("Actual Number of Pomodoros")
 plt.scatter(DataX, DataY,alpha=0.5)
 plt.show
 
-                                                ####  Visualizing a descriptive linear regression ####
+                                                ####  DESCRIPTIVE LINEAR REGRESSION ####
 # Create a linear regression model
 model = LinearRegression()
 
