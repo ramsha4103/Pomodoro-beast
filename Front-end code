@@ -1,0 +1,48 @@
+from flask import Flask, render_template, request
+import numpy as np
+from sklearn.tree import DecisionTreeRegressor
+from sklearn.model_selection import train_test_split
+
+app = Flask(__name__)
+
+@app.route('/')
+def index():
+    return render_template('index.html')
+
+@app.route('/predict', methods=['POST'])
+def predict():
+    estimated_pomodoros = int(request.form['estimated_pomodoros'])
+
+    # The provided Python code
+    DataX = np.array([[3], [5], [1], [2], [1], [1], [2], [1], [2], [1], [1], [1], [3], [2], [1]])
+    DataY = np.array([5, 4, 2, 3, 1, 2, 6, 3, 3, 1, 2, 1, 10, 3, 1])
+
+    X_train, X_test, y_train, y_test = train_test_split(DataX, DataY, test_size=0.8, random_state=0)
+
+    reg_tree_split = DecisionTreeRegressor(random_state=0)
+    reg_tree_split.fit(X_train, y_train)
+
+    # Make predictions for the estimated pomodoros
+    y_pred_split = reg_tree_split.predict([[estimated_pomodoros]])
+
+    return render_template('index.html', result=y_pred_split[0])
+
+if __name__ == '__main__':
+    app.run(debug=True)
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Pomodoro Prediction</title>
+</head>
+<body>
+    <div style="text-align: center; margin-top: 50px;">
+        <form action="/predict" method="post">
+            <input type="text" name="estimated_pomodoros" placeholder="Enter estimated number of Pomodoros">
+            <button type="submit">Predict</button>
+        </form>
+        {% if result %}
+            <p>Predicted number for the actual Pomodoros needed: {{ result }}</p>
+        {% endif %}
+    </div>
+</body>
+</html>
