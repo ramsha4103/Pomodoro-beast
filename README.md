@@ -1,5 +1,5 @@
 # Pomodoro-beast
-A tool for estimating how much time it will take you to complete a task, based on your estimates. 
+A python tool for estimating how much time it will take you to complete a task, based on your estimates. 
 
 Over 2 million people have used Pomodoros or other time estimates when trying to schedule their day or month. When commiting to the pomodoro method, many people don't realize that getting rid of distractions and doing focused work is only one part of the process. Another huge part that many people miss is keeping track of how long it takes them to complete tasks, this helps with two things:
 
